@@ -1,19 +1,21 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <div class="background"></div>
+    <Timer />
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Timer from "./components/Timer.vue";
+import FormBox from "./components/FormBox.vue";
+import HelloWorld from "./components/HelloWorld.vue";
 
 export default {
-  name: 'App',
+  name: "App",
   components: {
-    HelloWorld
+    Timer
   }
-}
+};
 </script>
 
 <style lang="scss">
@@ -24,5 +26,16 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+  color: white;
+}
+
+.background {
+  position: fixed;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(4, 41, 48);
 }
 </style>
