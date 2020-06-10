@@ -1,5 +1,5 @@
 <template>
-  <div id="#app">
+  <div id="#app" class="inputContainer">
     <input type="checkbox" id="armsAndChest" v-model="isActive[0]" />
     <label for="armsAndChest">Arms and Chest</label>
     <input type="checkbox" id="back" v-model="isActive[1]" />
@@ -13,7 +13,12 @@
     <br />
     <br />
 
-    <input type="text" placeholder="type amount of workouts" v-model="amountOfWorkouts" />
+    <input
+      type="text"
+      placeholder="type amount of workouts"
+      v-model="amountOfWorkouts"
+      @keyup.enter="$emit('submit', submitWorkout())"
+    />
 
     <br />
     <br />
@@ -75,6 +80,8 @@ export default {
 
   methods: {
     submitWorkout() {
+      this.workoutList = [];
+
       var amtOfActiveGroups = 0;
       var i;
       for (i = 0; i <= 3; i++) {
@@ -145,4 +152,6 @@ export default {
 </script>
 
 <style lang="sass" scoped>
+.inputContainer
+  margin-top: 20px
 </style>
