@@ -34,7 +34,7 @@
 <script>
 import FormBox from "./components/FormBox.vue";
 
-var countDownAmount = 3;
+var countDownAmount = 30;
 
 export default {
   name: "App",
@@ -131,7 +131,8 @@ export default {
   overflow: hidden;
   width: 600px;
   height: 480px;
-  margin-left: 40px;
+  // margin-left: 8%;
+  position: relative;
 }
 
 .vidContainerContainer {
@@ -140,10 +141,13 @@ export default {
 }
 
 #centerVideo {
-  margin-left: -40px;
+  margin-left: -16%;
   width: 640px;
   height: 480px;
-  margin-right: 8px;
+  // margin-right: 8px;
+  position: absolute;
+  left: 0%;
+  clip: rect(0px, 1280px, 480px, 80px);
 }
 
 label {
@@ -167,7 +171,7 @@ label {
 
   #centerVideo {
     width: 896px;
-    margin-left: -90px;
+    // margin-left: -90px;
   }
 }
 
@@ -175,7 +179,7 @@ label {
   position: relative;
   top: 39px;
   height: 6px;
-  animation: progress 3s infinite linear;
+  animation: progress 30s infinite linear;
   transition: background-color 0.4s;
   width: 0%;
 }
